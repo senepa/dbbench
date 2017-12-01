@@ -44,7 +44,16 @@ if (!argv.db) {
 }
 
 var faker = require('faker');
-var db    = require('./plug/' + argv.db + '/index.js');
+var db;
+try {
+  db = require('./plug/' + argv.db + '/index.js');
+} catch (e) {
+  console.error('Could not find the provided database');
+  if(argv.debug) {
+    console.error(e);
+  }
+  process.exit(1);
+}
 
 var id = 0;
 
