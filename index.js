@@ -46,13 +46,15 @@ if (!argv.db) {
 var faker = require('faker');
 var db;
 try {
+  if(argv.verbose) { console.log(`Searching for db type "${argv.db}"`)}
   db = require('./plug/' + argv.db + '/index.js');
 } catch (e) {
   console.error('Could not find the provided database');
-  if(argv.debug) {
-    console.error(e);
-  }
-  process.exit(1);
+  console.error(e);
+}
+
+if(argv.verbose){
+  console.log('Running in verbose mode. Not recommended for real benchmark tests');
 }
 
 var id = 0;
@@ -69,6 +71,7 @@ function generate(callback) {
       });
     }
 
+    if (argv.verbose) { console.log('Inserting id', id); }
     db.insert('identifier' + id++, {
       firstname: faker.name.firstName(),
       lastname: faker.name.lastName(),
@@ -108,6 +111,7 @@ function bench(callback) {
     maxMemory = Math.max(maxMemory, memoryUsage);
 
 
+    if (argv.verbose) { console.log('Getting id', id); }
     db.get(id, function (err, entry) {
       var elapsed = process.hrtime(startTime);
       elapsed = elapsed[0] * 1e9 + elapsed[1];
