@@ -9,7 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "better-sqlite3": "^4.0.3",
+    "better-sqlite3": "^6.0.1",
     "faker": "^4.1.0",
     "final-db": "^2.4.1",
     "lowdb": "^1.0.0",
@@ -19,7 +19,7 @@
     "nosql": "^6.1.0",
     "pouchdb": "^7.2.1",
     "rimraf": "^3.0.2",
-    "sqlite3": "^3.1.13",
+    "sqlite3": "^4.1.1",
     "taffydb": "^2.7.3",
     "tingodb": "^0.6.1",
     "underscore-db": "^0.12.2"
