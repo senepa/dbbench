@@ -12,6 +12,7 @@
     "better-sqlite3": "^6.0.1",
     "faker": "^4.1.0",
     "final-db": "^2.4.1",
+    "lokijs": "^1.5.8",
     "lowdb": "^1.0.0",
     "minimist": "^1.2.0",
     "mongodb": "^3.5.4",
