@@ -24,11 +24,9 @@ exports.init = function (options, callback) {
 
 exports.insert = function (id, entry, callback) {
   entry._id = id;
-  db.insert(entry);
-  callback();
+  db.insert(entry, callback);
 };
 
 exports.get = function (id, callback) {
-  db.findOne({ _id: id });
-  callback();
+  db.findOne({ _id: id }, callback);
 };
