@@ -23,6 +23,7 @@
     "sqlite3": "^4.1.1",
     "taffydb": "^2.7.3",
     "tingodb": "^0.6.1",
-    "underscore-db": "^0.12.2"
+    "underscore-db": "^0.12.2",
+    "linvodb3":"^3.26.0"
   }
 }
